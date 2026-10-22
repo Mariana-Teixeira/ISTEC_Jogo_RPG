@@ -1,23 +1,26 @@
 extends Camera3D
 
-@export var player: Player
 @export var follow_speed: float = 5.0
 
-var previous_position : Vector3
-
+var player: Player
 var offset: Vector3
 
 func _ready() -> void:
+	Signals.local_player_ready.connect(link_to_player)
 	offset = position
 
-func _process(delta: float) -> void:
-	move_camera(delta)
+func link_to_player(p: Player) -> void:
+	player = p
+	player.camera = self
+
+func _process(_delta: float) -> void:
+	if not player: return
+	move_camera()
 	rotate_camera()
 
-func move_camera(delta: float) -> void:
+func move_camera() -> void:
 	var destination = player.position + offset;
-	var t = follow_speed * delta;
-	position = lerp(position, destination, t)
+	position = destination
 
 func rotate_camera() -> void:
 	look_at(player.position)
