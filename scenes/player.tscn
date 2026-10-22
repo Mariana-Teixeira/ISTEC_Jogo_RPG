@@ -11,12 +11,13 @@ properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 2
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
-radius = 0.23828125
-height = 0.7671683
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vlb3"]
+radius = 0.1743164
+height = 0.7006836
 
-[node name="Player" type="CharacterBody3D" unique_id=342563498]
+[node name="Player" type="CharacterBody3D" unique_id=342563498 node_paths=PackedStringArray("bullet_marker")]
 script = ExtResource("1_g2els")
+bullet_marker = NodePath("Marker3D")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2040081230]
 replication_config = SubResource("SceneReplicationConfig_g2els")
@@ -26,5 +27,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 mesh = ExtResource("1_3vyb7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=423353530]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3608808, -0.002361223)
-shape = SubResource("CapsuleShape3D_g2els")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3503418, 0)
+shape = SubResource("CapsuleShape3D_1vlb3")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=52010376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.25)

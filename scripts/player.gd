@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var move_speed: float = 2.0
+@export var bullet_marker: Marker3D
 
 var camera: Camera3D
 var move_direction: Vector3
@@ -16,34 +17,33 @@ func _ready() -> void:
 		set_process(false)
 		set_physics_process(false)
 		set_process_input(false)
+		set_process_unhandled_input(false)
 	else:
 		Signals.local_player_ready.emit(self)
 
-func _process(_delta : float) -> void:
-	move_direction = read_move_input()
+func _process(_delta: float) -> void:
+	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	move_direction = Vector3(input.x, 0, input.y)
 
 func _physics_process(_delta: float) -> void:
 	move_character()
 	rotate_character()
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
+	# Aim
 	if event is InputEventMouseMotion:
 		mouse_position = event.position
+	
+	# Shooting
+	if event.is_action_pressed("fire"):
+		var data = { 
+			"origin": bullet_marker.global_position,
+			"destination":  get_mouse_world_position() }
+		rpc("request_shot", data)
 
-func read_move_input() -> Vector3:
-	var x: float = 0.0
-	var z: float = 0.0
-	
-	if (Input.is_action_pressed("move_forward")):
-		z -= 1
-	if (Input.is_action_pressed("move_backward")):
-		z += 1
-	if (Input.is_action_pressed("move_left")):
-		x -= 1
-	if (Input.is_action_pressed("move_right")):
-		x += 1
-	
-	return Vector3(x, 0, z).normalized()
+@rpc("any_peer", "call_local")
+func request_shot(data: Dictionary) -> void:
+	Signals.player_shot.emit(data.origin, data.destination)
 
 func get_mouse_world_position() -> Vector3:
 	var ray_origin = camera.project_ray_origin(mouse_position)
