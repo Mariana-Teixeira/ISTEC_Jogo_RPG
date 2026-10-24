@@ -17,8 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Network="*uid://bdbf2pnkfru0"
-Signals="*uid://di0lggck1s7kt"
+Events="*uid://di0lggck1s7kt"
 
 [display]
 

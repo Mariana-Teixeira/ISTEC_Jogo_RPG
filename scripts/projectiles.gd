@@ -4,7 +4,7 @@ extends Node3D
 @export var bullet_force: float = 2.0
 
 func _ready() -> void:
-	Signals.player_shot.connect(fire_shot)
+	Events.player_shot.connect(fire_shot)
 
 func fire_shot(origin: Vector3, destination: Vector3) -> void:
 	var direction = (destination - origin).normalized()
