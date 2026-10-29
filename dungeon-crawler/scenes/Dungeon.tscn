@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://6ciyntyos7qq"]
+
+[node name="Dungeon" type="Node3D" unique_id=1064031961]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=974236287]
+size = Vector3(5, 1, 5)
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1357361705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+size = Vector3(5, 1, 5)
+
+[node name="Column" type="CSGCombiner3D" parent="." unique_id=1578188253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Pedistal" type="CSGBox3D" parent="Column" unique_id=670485441]
+
+[node name="Shaft" type="CSGCylinder3D" parent="Column" unique_id=1592685698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+height = 3.0
+
+[node name="Bucket" type="CSGCombiner3D" parent="." unique_id=313864917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
+
+[node name="Bucket" type="CSGCylinder3D" parent="Bucket" unique_id=1289394955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+height = 1.0
+
+[node name="Hole" type="CSGCylinder3D" parent="Bucket" unique_id=1892619436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15471768, 0)
+operation = 2
+radius = 0.4
+height = 0.5
