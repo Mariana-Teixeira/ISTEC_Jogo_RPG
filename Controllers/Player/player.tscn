@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4bjfp5ntrdr3"]
+
+[ext_resource type="Script" uid="uid://dkqa51m6pdamj" path="res://Controllers/Player/player_controller.gd" id="1_ey6tl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eq2t1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eq2t1"]
+
+[node name="Player" type="CharacterBody3D" unique_id=2077024448]
+script = ExtResource("1_ey6tl")
+speed = null
+fall_acceleration = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=264663472]
+mesh = SubResource("CapsuleMesh_eq2t1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1973592209]
+shape = SubResource("CapsuleShape3D_eq2t1")
+
+[node name="Head" type="Node3D" parent="." unique_id=349967994]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=41130782]
