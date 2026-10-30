@@ -38,6 +38,7 @@ shape = SubResource("BoxShape3D_eq2t1")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1082899194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.798757, -11.159532)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1152501965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9950957, 6.868225)
