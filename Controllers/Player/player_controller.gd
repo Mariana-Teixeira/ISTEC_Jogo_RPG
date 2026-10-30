@@ -11,6 +11,8 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
+var target_velocity = Vector3.ZERO
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -26,8 +28,6 @@ func _unhandled_input(event):
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
