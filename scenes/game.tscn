@@ -14,7 +14,7 @@ background_mode = 2
 sky = SubResource("Sky_yqjtg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eq2t1"]
-size = Vector3(4.504883, 1.0668945, 5.5703125)
+size = Vector3(106.87402, 1.0668945, 247.6875)
 
 [node name="Game" type="Node3D" unique_id=615727027]
 
@@ -24,9 +24,6 @@ environment = SubResource("Environment_lnu2h")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1459250053]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1883082407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1227413, 1.7824087)
 
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_uwrxv")]
 speed = 14
@@ -38,3 +35,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025742292, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=785847214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2256231, 0.07324445)
 shape = SubResource("BoxShape3D_eq2t1")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1082899194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.798757, -11.159532)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1152501965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9950957, 6.868225)
+size = Vector3(1, 5.6955566, 1)
