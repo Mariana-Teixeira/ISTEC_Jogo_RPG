@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvh56t3ts1kvu"]
 
-[ext_resource type="Script" uid="uid://bybkqbrhbdmg0" path="res://System/porta.gd" id="1_jy2eq"]
+[ext_resource type="Script" uid="uid://bybkqbrhbdmg0" path="res://System/PortaChave/porta.gd" id="1_jy2eq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wyfhi"]
 radius = 1.1644762

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brli7xbvemvhf"]
 
-[ext_resource type="Script" uid="uid://bm1yww3ashnte" path="res://System/chave.gd" id="1_2ui4d"]
+[ext_resource type="Script" uid="uid://bm1yww3ashnte" path="res://System/PortaChave/chave.gd" id="1_2ui4d"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_e8gdl"]
 
