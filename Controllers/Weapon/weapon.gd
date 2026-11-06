@@ -7,9 +7,13 @@ var damage: float
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("attack") && cast.is_colliding():
+		print("Colliding")
 		for i in cast.get_collision_count():
 			var collider = cast.get_collider(i)
-			pass
-
+			var enemy = collider as Enemy
+			if enemy != null:
+				enemy.take_damage(damage)
+			
+	
 func calculate_rune(rune: RuneData) -> void:
 	damage = rune.damage

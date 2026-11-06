@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jifjfox6t234" path="res://Controllers/Enemy/enemy.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dayyqvkffi5y2" path="res://System/Runes/rune.tscn" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://b6fac4bdylk8" path="res://System/Runes/Data/rune_data.gd" id="4_iywne"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,6 +20,11 @@ sky = SubResource("Sky_yqjtg")
 vertices = PackedVector3Array(-43.51049, -0.5370972, -4.3240356, -1.0104904, -0.5370972, -4.3240356, -1.0104904, -0.5370972, -5.0740356, -0.0104904175, -0.5370972, -5.3240356, -0.0104904175, -0.5370972, -66.324036, -43.51049, -0.5370972, -66.324036, 0.9895096, -0.5370972, -5.3240356, 1.2395096, -0.5370972, -4.3240356, 40.23951, -0.5370972, -4.3240356, 40.23951, -0.5370972, -66.324036, -0.0104904175, -0.5370972, 33.925964, -0.0104904175, -0.5370972, -3.0740356, -1.0104904, -0.5370972, -3.3240356, -43.51049, -0.5370972, 33.925964, 0.9895096, -0.5370972, -3.0740356, 40.23951, -0.5370972, 33.925964)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 4), PackedInt32Array(6, 3, 4), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(12, 13, 0), PackedInt32Array(0, 1, 12), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 7, 10), PackedInt32Array(10, 7, 8), PackedInt32Array(10, 8, 15)]
 
+[sub_resource type="Resource" id="Resource_us6fa"]
+script = ExtResource("4_iywne")
+damage = 5.0
+metadata/_custom_type_script = "uid://b6fac4bdylk8"
+
 [node name="Game" type="Node3D" unique_id=615727027]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1037868618]
@@ -28,8 +35,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_uwrxv")]
-speed = 14
-fall_acceleration = 75
 
 [node name="World" type="NavigationRegion3D" parent="." unique_id=455867810]
 navigation_mesh = SubResource("NavigationMesh_eq2t1")
@@ -48,3 +53,7 @@ size = Vector3(1, 5.6955566, 1)
 [node name="Enemy" parent="." unique_id=1813486969 node_paths=PackedStringArray("player") instance=ExtResource("2_yqjtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0122066, 0, -14.661199)
 player = NodePath("../Player")
+
+[node name="Rune" parent="." unique_id=1838869044 instance=ExtResource("3_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0720973, -0.53709984, 7.3285418)
+rune_data = SubResource("Resource_us6fa")
