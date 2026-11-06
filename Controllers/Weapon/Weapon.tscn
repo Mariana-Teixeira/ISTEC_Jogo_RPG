@@ -9,4 +9,4 @@ script = ExtResource("1_6bxiw")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=550019394]
 shape = SubResource("SphereShape3D_1oy50")
-target_position = Vector3(1.5, 0, 0)
+target_position = Vector3(0, 0, -1)
