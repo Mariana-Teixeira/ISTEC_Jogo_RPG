@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://d2c8ximx4xehm"]
+
+[ext_resource type="Script" uid="uid://b6fac4bdylk8" path="res://System/Runes/Data/rune_data.gd" id="1_0mget"]
+
+[resource]
+script = ExtResource("1_0mget")
+damage = 5.0
+metadata/_custom_type_script = "uid://b6fac4bdylk8"
