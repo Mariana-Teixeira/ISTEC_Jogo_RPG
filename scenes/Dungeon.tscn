@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://6ciyntyos7qq"]
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_5njy5"]
+[ext_resource type="MeshLibrary" uid="uid://ddrbjriivnv3b" path="res://EnvironmentGrid.tres" id="2_ejrmu"]
 
 [node name="Dungeon" type="Node3D" unique_id=1064031961]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1322914853]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_5njy5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-speed = 14
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.654211, 3, 0)
+speed = 5
 fall_acceleration = 75
 
 [node name="Floor" type="CSGCombiner3D" parent="." unique_id=1702942424]
@@ -151,3 +156,9 @@ height = 1.0
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Floor" unique_id=834293902]
 transform = Transform3D(29.789997, 0, 0, 0, 1, 0, 0, 0, 29.789997, 194.16632, 0, 64.613235)
 height = 1.0
+
+[node name="GridMap" type="GridMap" parent="." unique_id=984823991]
+mesh_library = ExtResource("2_ejrmu")
+data = {
+"cells": PackedInt32Array(65532, 65534, 655360, 65532, 1, 655360, 65532, 4, 655360)
+}
