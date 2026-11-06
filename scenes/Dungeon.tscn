@@ -5,7 +5,7 @@
 [node name="Dungeon" type="Node3D" unique_id=1064031961]
 
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_5njy5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7994199, 2.5958047, 1.4289856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 speed = 14
 fall_acceleration = 75
 
@@ -146,10 +146,8 @@ size = Vector3(7, 1, 26.544373)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Floor" unique_id=691565116]
 transform = Transform3D(29.789997, 0, 0, 0, 1, 0, 0, 0, 29.789997, 137.16632, 0, 99.613235)
+height = 1.0
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Floor" unique_id=834293902]
 transform = Transform3D(29.789997, 0, 0, 0, 1, 0, 0, 0, 29.789997, 194.16632, 0, 64.613235)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=657298411]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 28, 0)
-shadow_enabled = true
+height = 1.0
