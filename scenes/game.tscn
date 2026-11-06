@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dymg212fecusu"]
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dvh56t3ts1kvu" path="res://scenes/Porta.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://brli7xbvemvhf" path="res://scenes/Chave.tscn" id="3_lnu2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,3 +45,9 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1152501965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9950957, 6.868225)
 size = Vector3(1, 5.6955566, 1)
+
+[node name="Porta" parent="." unique_id=758579494 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5790212, -0.19217587, 0.3385389)
+
+[node name="Chave" parent="." unique_id=478289322 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26215506, -0.1921761, 2.3296475)

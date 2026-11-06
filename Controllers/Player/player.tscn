@@ -6,10 +6,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eq2t1"]
 
-[node name="Player" type="CharacterBody3D" unique_id=2077024448]
+[node name="Player" type="CharacterBody3D" unique_id=2077024448 groups=["player"]]
 script = ExtResource("1_ey6tl")
-speed = null
-fall_acceleration = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=264663472]
 mesh = SubResource("CapsuleMesh_eq2t1")
