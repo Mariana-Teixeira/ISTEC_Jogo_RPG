@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dymg212fecusu"]
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://jifjfox6t234" path="res://Controllers/Enemy/enemy.tscn" id="2_yqjtg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -13,8 +14,9 @@ sky_material = SubResource("ProceduralSkyMaterial_uwrxv")
 background_mode = 2
 sky = SubResource("Sky_yqjtg")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eq2t1"]
-size = Vector3(106.87402, 1.0668945, 247.6875)
+[sub_resource type="NavigationMesh" id="NavigationMesh_eq2t1"]
+vertices = PackedVector3Array(-43.51049, -0.5370972, -4.3240356, -1.0104904, -0.5370972, -4.3240356, -1.0104904, -0.5370972, -5.0740356, -0.0104904175, -0.5370972, -5.3240356, -0.0104904175, -0.5370972, -66.324036, -43.51049, -0.5370972, -66.324036, 0.9895096, -0.5370972, -5.3240356, 1.2395096, -0.5370972, -4.3240356, 40.23951, -0.5370972, -4.3240356, 40.23951, -0.5370972, -66.324036, -0.0104904175, -0.5370972, 33.925964, -0.0104904175, -0.5370972, -3.0740356, -1.0104904, -0.5370972, -3.3240356, -43.51049, -0.5370972, 33.925964, 0.9895096, -0.5370972, -3.0740356, 40.23951, -0.5370972, 33.925964)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 4), PackedInt32Array(6, 3, 4), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(12, 13, 0), PackedInt32Array(0, 1, 12), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 7, 10), PackedInt32Array(10, 7, 8), PackedInt32Array(10, 8, 15)]
 
 [node name="Game" type="Node3D" unique_id=615727027]
 
@@ -29,17 +31,20 @@ shadow_enabled = true
 speed = 14
 fall_acceleration = 75
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=551057300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025742292, 0, 0)
+[node name="World" type="NavigationRegion3D" parent="." unique_id=455867810]
+navigation_mesh = SubResource("NavigationMesh_eq2t1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=785847214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2256231, 0.07324445)
-shape = SubResource("BoxShape3D_eq2t1")
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1082899194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.798757, -11.159532)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="World" unique_id=1036120792]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1152501965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9950957, 6.868225)
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CSGCombiner3D" unique_id=978413124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.668786, -1.5370972, -16.211151)
+size = Vector3(84.68341, 1, 101.22577)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/CSGCombiner3D" unique_id=1152501965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8036613, -4.2913065)
 size = Vector3(1, 5.6955566, 1)
+
+[node name="Enemy" parent="." unique_id=1813486969 node_paths=PackedStringArray("player") instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0122066, 0, -14.661199)
+player = NodePath("../Player")

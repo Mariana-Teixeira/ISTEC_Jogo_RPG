@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b4bjfp5ntrdr3"]
 
 [ext_resource type="Script" uid="uid://dkqa51m6pdamj" path="res://Controllers/Player/player_controller.gd" id="1_ey6tl"]
+[ext_resource type="PackedScene" uid="uid://clovwqxb8stjx" path="res://Components/HealthComponent.tscn" id="2_4pj0q"]
+[ext_resource type="Script" uid="uid://kedln7kqpsu" path="res://Components/health_component.gd" id="3_4krcl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_eq2t1"]
 
@@ -8,8 +10,6 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=2077024448]
 script = ExtResource("1_ey6tl")
-speed = null
-fall_acceleration = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=264663472]
 mesh = SubResource("CapsuleMesh_eq2t1")
@@ -20,3 +20,10 @@ shape = SubResource("CapsuleShape3D_eq2t1")
 [node name="Head" type="Node3D" parent="." unique_id=349967994]
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=41130782]
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1183085406]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthComponent" parent="." unique_id=227084010 instance=ExtResource("2_4pj0q")]
+script = ExtResource("3_4krcl")

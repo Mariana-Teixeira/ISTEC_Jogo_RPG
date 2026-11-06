@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://jifjfox6t234"]
+
+[ext_resource type="Script" uid="uid://ceu5w7ketj5u2" path="res://Controllers/Enemy/enemy.gd" id="1_rmm47"]
+[ext_resource type="PackedScene" uid="uid://clovwqxb8stjx" path="res://Components/HealthComponent.tscn" id="2_yh4fu"]
+[ext_resource type="Script" uid="uid://kedln7kqpsu" path="res://Components/health_component.gd" id="3_whdqs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fpiqv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc4pm"]
+albedo_color = Color(0.73, 0.10949998, 0.10949998, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q701h"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1813486969]
+script = ExtResource("1_rmm47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1753988087]
+mesh = SubResource("CapsuleMesh_fpiqv")
+surface_material_override/0 = SubResource("StandardMaterial3D_jc4pm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=146833100]
+shape = SubResource("CapsuleShape3D_q701h")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1498979825]
+
+[node name="HealthComponent" parent="." unique_id=227084010 instance=ExtResource("2_yh4fu")]
+script = ExtResource("3_whdqs")
