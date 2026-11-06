@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+var tem_chave = false
+
 @export var look_sensitivity: float = 0.005
 
 @onready var head = $Head
