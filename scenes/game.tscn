@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://jifjfox6t234" path="res://Controllers/Enemy/enemy.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dayyqvkffi5y2" path="res://System/Runes/rune.tscn" id="3_lbhrr"]
 [ext_resource type="Script" uid="uid://b6fac4bdylk8" path="res://System/Runes/Data/rune_data.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dvh56t3ts1kvu" path="res://System/PortaChave/Porta.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://brli7xbvemvhf" path="res://System/PortaChave/Chave.tscn" id="6_u5sy4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,3 +59,9 @@ player = NodePath("../Player")
 [node name="Rune" parent="." unique_id=1838869044 instance=ExtResource("3_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70929, -0.53709984, 7.3285418)
 rune_data = SubResource("Resource_us6fa")
+
+[node name="Porta" parent="." unique_id=2044431322 instance=ExtResource("5_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.451615, 0.99324274, 1.1542466)
+
+[node name="Chave" parent="." unique_id=1851726399 instance=ExtResource("6_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.584269, -0.53709745, -5.5589314)
