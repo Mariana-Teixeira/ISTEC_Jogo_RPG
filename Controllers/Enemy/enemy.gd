@@ -27,5 +27,8 @@ func take_damage(damage: float) -> void:
 	HP = HP - damage
 	print(HP)
 	
+	if HP <= 0:
+		on_death()
+	
 func on_death() -> void:
 	queue_free()
