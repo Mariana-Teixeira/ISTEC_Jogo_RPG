@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c0mp8xp4uhl53"]
+
+[ext_resource type="Script" uid="uid://djo5fyibvtgmh" path="res://Controllers/Enemy/ranged_enemy.gd" id="1_pkcqo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pkcqo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rjobu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p57ef"]
+albedo_color = Color(0.20256978, 0, 0.36169744, 1)
+
+[node name="RangedEnemy" type="CharacterBody3D" unique_id=2132676368]
+script = ExtResource("1_pkcqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1027329658]
+shape = SubResource("CapsuleShape3D_pkcqo")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=901420786]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=193683177]
+mesh = SubResource("CapsuleMesh_rjobu")
+surface_material_override/0 = SubResource("StandardMaterial3D_p57ef")

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jifjfox6t234" path="res://Controllers/Enemy/enemy.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dayyqvkffi5y2" path="res://System/Runes/rune.tscn" id="3_lbhrr"]
 [ext_resource type="Script" uid="uid://b6fac4bdylk8" path="res://System/Runes/Data/rune_data.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://c0mp8xp4uhl53" path="res://Controllers/Enemy/RangedEnemy.tscn" id="5_iywne"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,3 +58,9 @@ player = NodePath("../Player")
 [node name="Rune" parent="." unique_id=1838869044 instance=ExtResource("3_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70929, -0.53709984, 7.3285418)
 rune_data = SubResource("Resource_us6fa")
+
+[node name="RangedEnemy" parent="." unique_id=2132676368 node_paths=PackedStringArray("player") instance=ExtResource("5_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8437653, 0, -10.653988)
+AttackReach = 6.0
+EscapeDistance = 10.0
+player = NodePath("../Player")
