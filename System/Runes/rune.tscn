@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dayyqvkffi5y2"]
+
+[ext_resource type="Script" uid="uid://drpqui1ywqyxv" path="res://System/Runes/rune.gd" id="1_yiml4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v7dbp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v7dbp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l0vy"]
+albedo_color = Color(0, 1, 1, 1)
+
+[node name="Rune" type="Area3D" unique_id=1838869044]
+script = ExtResource("1_yiml4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=975489424]
+shape = SubResource("SphereShape3D_v7dbp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=968011907]
+mesh = SubResource("SphereMesh_v7dbp")
+surface_material_override/0 = SubResource("StandardMaterial3D_2l0vy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

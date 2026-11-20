@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 var tem_chave = false
 
@@ -6,17 +7,23 @@ var tem_chave = false
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var health_label: Label = $HealthLabel
+@onready var health_component: Node = $HealthComponent
 
 # How fast the player moves in meters per second.
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
+@onready var weapon: Weapon = $Weapon
+
 var target_velocity = Vector3.ZERO
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	
+func _process(delta: float) -> void:
+	health_label.text = str(health_component.health)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -57,3 +64,9 @@ func _physics_process(delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+	
+func on_death() -> void:
+	get_tree().quit()
+
+func add_rune_to_weapon(rune: RuneData) -> void:
+	weapon.calculate_rune(rune)
