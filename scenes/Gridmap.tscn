@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6l4cn1v8gn11"]
 
-[ext_resource type="ArrayMesh" uid="uid://bno2oygvnf8wu" path="res://assets/chão.glb" id="1_5ntlx"]
-[ext_resource type="ArrayMesh" uid="uid://b3wsa420bqq12" path="res://assets/chão_canto.glb" id="2_t41rs"]
-[ext_resource type="ArrayMesh" uid="uid://dwtga54otwteo" path="res://assets/chão_metade.glb" id="3_4nuu8"]
+[ext_resource type="ArrayMesh" uid="uid://bno2oygvnf8wu" path="res://assets/chao/chão.glb" id="1_5ntlx"]
+[ext_resource type="ArrayMesh" uid="uid://b3wsa420bqq12" path="res://assets/chao/chão_canto.glb" id="2_t41rs"]
+[ext_resource type="ArrayMesh" uid="uid://dwtga54otwteo" path="res://assets/chao/chão_metade.glb" id="3_4nuu8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1xvh"]
 size = Vector3(5.0472846, 0.18602428, 5.054396)
