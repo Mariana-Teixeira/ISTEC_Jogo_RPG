@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://6ciyntyos7qq"]
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_5njy5"]
+[ext_resource type="ArrayMesh" uid="uid://bv2yd7nahxo6g" path="res://assets/stairs.glb" id="2_ejrmu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1w45"]
 
@@ -645,3 +646,7 @@ mesh = SubResource("ArrayMesh_ejrmu")
 [node name="Chão105" type="MeshInstance3D" parent="." unique_id=1976940627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 1, 23)
 mesh = SubResource("ArrayMesh_ejrmu")
+
+[node name="Stairs" type="MeshInstance3D" parent="." unique_id=169872468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6977196, 0.6823745, 11.778553)
+mesh = ExtResource("2_ejrmu")

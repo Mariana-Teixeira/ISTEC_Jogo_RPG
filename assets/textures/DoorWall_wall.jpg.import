@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvc04ev2hiaa2"
-path.s3tc="res://.godot/imported/SimpleWall_wall.jpg-27f7d495a710379015cfff307cb0a870.s3tc.ctex"
+uid="uid://c5bhdof451dcm"
+path.s3tc="res://.godot/imported/DoorWall_wall.jpg-da2882857832709d0bedcdcb1a8955b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/parede/SimpleWall_wall.jpg"
-dest_files=["res://.godot/imported/SimpleWall_wall.jpg-27f7d495a710379015cfff307cb0a870.s3tc.ctex"]
+source_file="res://assets/textures/DoorWall_wall.jpg"
+dest_files=["res://.godot/imported/DoorWall_wall.jpg-da2882857832709d0bedcdcb1a8955b8.s3tc.ctex"]
 
 [params]
 

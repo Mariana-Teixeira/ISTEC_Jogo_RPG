@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfykc6ebanwlg"
-path.s3tc="res://.godot/imported/WindowWall_wall.jpg-e36c2c92f9f38b40968388d09b118e93.s3tc.ctex"
+uid="uid://dghebvs84bw1s"
+path.s3tc="res://.godot/imported/CandlesWall_wall.jpg-024d0408a47f6d047924dc2abee9fe26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/parede/WindowWall_wall.jpg"
-dest_files=["res://.godot/imported/WindowWall_wall.jpg-e36c2c92f9f38b40968388d09b118e93.s3tc.ctex"]
+source_file="res://assets/textures/CandlesWall_wall.jpg"
+dest_files=["res://.godot/imported/CandlesWall_wall.jpg-024d0408a47f6d047924dc2abee9fe26.s3tc.ctex"]
 
 [params]
 

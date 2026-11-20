@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5bhdof451dcm"
-path.s3tc="res://.godot/imported/DoorWall_wall.jpg-a28af8b34f8d126bbfaabf39b9936363.s3tc.ctex"
+uid="uid://ddbgddmlp5aa5"
+path.s3tc="res://.godot/imported/ChainWall_wall.jpg-557e708bf45d8e39c2ecdf1fa1610894.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/parede/DoorWall_wall.jpg"
-dest_files=["res://.godot/imported/DoorWall_wall.jpg-a28af8b34f8d126bbfaabf39b9936363.s3tc.ctex"]
+source_file="res://assets/textures/ChainWall_wall.jpg"
+dest_files=["res://.godot/imported/ChainWall_wall.jpg-557e708bf45d8e39c2ecdf1fa1610894.s3tc.ctex"]
 
 [params]
 
