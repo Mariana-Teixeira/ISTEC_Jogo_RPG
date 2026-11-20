@@ -1,22 +1,80 @@
 [gd_scene format=3 uid="uid://jifjfox6t234"]
 
 [ext_resource type="Script" uid="uid://ceu5w7ketj5u2" path="res://Controllers/Enemy/enemy.gd" id="1_rmm47"]
+[ext_resource type="PackedScene" uid="uid://cv3jn4eveqq00" path="res://Assets/Animations/T-Pose.fbx" id="2_cvj56"]
 [ext_resource type="PackedScene" uid="uid://clovwqxb8stjx" path="res://Components/HealthComponent.tscn" id="2_yh4fu"]
+[ext_resource type="Script" uid="uid://blogtugc283p2" path="res://Controllers/Enemy/enemy_visual.gd" id="3_kio2y"]
 [ext_resource type="Script" uid="uid://kedln7kqpsu" path="res://Components/health_component.gd" id="3_whdqs"]
+[ext_resource type="Animation" uid="uid://b6i44fe0y1xdl" path="res://Assets/Animations/idle.res" id="4_kio2y"]
+[ext_resource type="Animation" uid="uid://exqscht36bou" path="res://Assets/Animations/run.res" id="5_dhtie"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fpiqv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc4pm"]
-albedo_color = Color(0.73, 0.10949998, 0.10949998, 1)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7fqi"]
+_data = {
+&"idle": ExtResource("4_kio2y"),
+&"run": ExtResource("5_dhtie")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q701h"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1813486969 groups=["Enemy"]]
 script = ExtResource("1_rmm47")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1753988087]
-mesh = SubResource("CapsuleMesh_fpiqv")
-surface_material_override/0 = SubResource("StandardMaterial3D_jc4pm")
+[node name="Visual" parent="." unique_id=508316705 node_paths=PackedStringArray("enemy") instance=ExtResource("2_cvj56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("3_kio2y")
+enemy = NodePath("..")
+
+[node name="Skeleton3D" parent="Visual" index="0" unique_id=1121502069]
+bones/0/position = Vector3(0.0035294495, 0.54713666, -0.0021495486)
+bones/0/rotation = Quaternion(0.06765391, -0.057462644, -0.014661286, 0.99594486)
+bones/1/rotation = Quaternion(0.101583205, 0.1271535, 0.007217464, 0.9866412)
+bones/2/rotation = Quaternion(-0.029622475, 0.015466546, 0.011806515, 0.99937177)
+bones/3/rotation = Quaternion(-0.029252239, 0.015500585, 0.010709509, 0.9993946)
+bones/4/rotation = Quaternion(0.055374373, -0.020165067, -0.02782456, 0.9978742)
+bones/5/rotation = Quaternion(0.0049053775, -0.020173803, -0.008524959, 0.9997481)
+bones/7/rotation = Quaternion(-0.6427262, -0.3684372, 0.5453177, -0.39215535)
+bones/8/rotation = Quaternion(0.29693952, 0.3630324, -0.37610656, 0.7991109)
+bones/9/rotation = Quaternion(0.016411688, -0.0010319242, 0.5903816, 0.80695677)
+bones/10/rotation = Quaternion(0.01928646, -0.08173017, -0.036530625, 0.99579805)
+bones/11/rotation = Quaternion(0.17474662, 0.08939489, 0.3498294, 0.9160195)
+bones/12/rotation = Quaternion(0.016536178, -0.00012324518, -0.34028342, 0.94017756)
+bones/13/rotation = Quaternion(-0.019015785, -0.009444516, 0.12392151, 0.9920649)
+bones/15/rotation = Quaternion(0.049813475, -0.0049280324, -0.004906981, 0.9987343)
+bones/16/rotation = Quaternion(0.105916135, 1.4608961e-05, -0.016985895, 0.99423003)
+bones/17/rotation = Quaternion(0.0258046, 1.0459917e-07, -0.003811595, 0.9996598)
+bones/19/rotation = Quaternion(0.04969895, 0.00019521675, -0.0050889053, 0.99875134)
+bones/20/rotation = Quaternion(0.10622147, 3.9948733e-05, -0.015176236, 0.99422675)
+bones/21/rotation = Quaternion(0.025845338, -2.459608e-05, -0.003603921, 0.9996595)
+bones/23/rotation = Quaternion(0.04982551, -0.0046567875, -0.007275281, 0.99872065)
+bones/24/rotation = Quaternion(0.10592279, 0.00036891474, -0.014354574, 0.9942707)
+bones/25/rotation = Quaternion(0.080226496, -0.0005588823, -0.009415603, 0.9967321)
+bones/27/rotation = Quaternion(0.6189798, -0.37705126, 0.56991136, 0.38716593)
+bones/28/rotation = Quaternion(0.26700664, 0.043938924, -0.12384799, 0.9546929)
+bones/29/rotation = Quaternion(0.02253561, 0.000813937, -0.7216609, 0.69187945)
+bones/30/rotation = Quaternion(-0.1800787, 0.111876816, -0.027487945, 0.9768827)
+bones/31/rotation = Quaternion(0.11802183, -0.11099015, -0.29456112, 0.9417992)
+bones/32/rotation = Quaternion(-0.015576186, -0.013070271, 0.38427743, 0.9229938)
+bones/33/rotation = Quaternion(-0.041003104, 0.0029018489, -0.2028653, 0.97834355)
+bones/35/rotation = Quaternion(0.025407977, 0.006072193, 0.0013073591, 0.9996579)
+bones/36/rotation = Quaternion(0.1435701, -0.0007192934, 0.021478409, 0.98940676)
+bones/37/rotation = Quaternion(0.01383753, -0.0008006105, -0.007991941, 0.999872)
+bones/39/rotation = Quaternion(0.025394237, -0.00047230447, -0.00074426027, 0.9996772)
+bones/40/rotation = Quaternion(0.1438273, 2.6614638e-05, 0.018695459, 0.9894262)
+bones/41/rotation = Quaternion(0.013856765, -1.0110307e-05, 0.0020338206, 0.999902)
+bones/43/rotation = Quaternion(0.02539429, -0.0052506025, -0.001304891, 0.9996629)
+bones/44/rotation = Quaternion(0.14399706, 0.00036461625, 0.016168727, 0.9894459)
+bones/45/rotation = Quaternion(0.013873057, 0.0002515158, 0.006673681, 0.99988157)
+bones/47/rotation = Quaternion(0.06875083, 0.48297894, 0.87143314, -0.0510793)
+bones/48/rotation = Quaternion(-0.8884661, -0.0497546, 0.06810322, 0.4511258)
+bones/49/rotation = Quaternion(0.33325377, -0.0071535185, 0.09995616, 0.9374964)
+bones/50/rotation = Quaternion(0.34737992, -0.020640472, 0.007648426, 0.9374661)
+bones/52/rotation = Quaternion(-0.03742946, -0.0027844126, 0.9988757, -0.028961278)
+bones/53/rotation = Quaternion(-0.34151638, -0.06997849, 0.0038557446, 0.9372592)
+bones/54/rotation = Quaternion(0.63575345, -0.061569322, -0.059559535, 0.7671242)
+bones/55/rotation = Quaternion(0.5866673, 0.0350512, 0.0012761294, 0.8090682)
+
+[node name="AnimationPlayer" parent="Visual" index="1" unique_id=1403081084]
+libraries/Enemy = SubResource("AnimationLibrary_r7fqi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=146833100]
 shape = SubResource("CapsuleShape3D_q701h")
@@ -25,3 +83,5 @@ shape = SubResource("CapsuleShape3D_q701h")
 
 [node name="HealthComponent" parent="." unique_id=227084010 instance=ExtResource("2_yh4fu")]
 script = ExtResource("3_whdqs")
+
+[editable path="Visual"]
