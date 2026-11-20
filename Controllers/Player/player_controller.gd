@@ -3,7 +3,11 @@ class_name Player
 
 var tem_chave = false
 
-@export var look_sensitivity: float = 0.005
+@export var look_sensitivity: float = 0.002
+
+@export var attack_cooldown: float = 1.0
+
+var can_attack: bool = true
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -36,6 +40,11 @@ func _unhandled_input(event):
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if can_attack:
+				attack()
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
@@ -70,3 +79,14 @@ func on_death() -> void:
 
 func add_rune_to_weapon(rune: RuneData) -> void:
 	weapon.calculate_rune(rune)
+
+func attack() -> void:
+	can_attack = false
+
+	var attack_instance: Attack = Attack.new(weapon.damage, self)
+
+	weapon.attack(attack_instance)
+
+	await get_tree().create_timer(attack_cooldown).timeout
+
+	can_attack = true
