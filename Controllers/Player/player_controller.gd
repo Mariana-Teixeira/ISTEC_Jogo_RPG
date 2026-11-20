@@ -3,7 +3,7 @@ class_name Player
 
 var tem_chave = false
 
-@export var look_sensitivity: float = 0.005
+@export var look_sensitivity: float = 0.002
 
 @export var attack_cooldown: float = 1.0
 
