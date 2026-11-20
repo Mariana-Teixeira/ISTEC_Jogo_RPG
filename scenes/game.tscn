@@ -28,8 +28,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_uwrxv")]
-speed = 14
-fall_acceleration = 75
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=551057300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025742292, 0, 0)
