@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6ciyntyos7qq"]
 
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_5njy5"]
-[ext_resource type="MeshLibrary" uid="uid://ddrbjriivnv3b" path="res://EnvironmentGrid.tres" id="2_ejrmu"]
+[ext_resource type="MeshLibrary" uid="uid://ddrbjriivnv3b" path="res://assets/EnvironmentGrid.tres" id="2_ejrmu"]
 
 [node name="Dungeon" type="Node3D" unique_id=1064031961]
 

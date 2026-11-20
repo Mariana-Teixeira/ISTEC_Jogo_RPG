@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8nrre1qu0ult"]
 
-[ext_resource type="MeshLibrary" uid="uid://ddrbjriivnv3b" path="res://EnvironmentGrid.tres" id="2_it8b8"]
+[ext_resource type="MeshLibrary" uid="uid://ddrbjriivnv3b" path="res://assets/EnvironmentGrid.tres" id="2_it8b8"]
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="2_vfkux"]
 
 [node name="Assets" type="Node3D" unique_id=2056762215]
@@ -18,5 +18,5 @@ fall_acceleration = 20
 mesh_library = ExtResource("2_it8b8")
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65535, 2, 1310721, 65534, 2, 1441793)
+"cells": PackedInt32Array(3, 5, 655363, 3, 3, 655363, 65530, 5, 3, 0, 2, 1441793)
 }

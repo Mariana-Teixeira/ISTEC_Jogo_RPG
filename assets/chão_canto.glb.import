@@ -3,13 +3,13 @@
 importer="ArrayMesh"
 importer_version=1
 type="ArrayMesh"
-uid="uid://bno2oygvnf8wu"
-path="res://.godot/imported/chão.glb-151bd0b6addcc4df69065ff4799fb44f.res"
+uid="uid://b3wsa420bqq12"
+path="res://.godot/imported/chão_canto.glb-997967799a54e5ec907ffe58ebe13a5f.res"
 
 [deps]
 
-source_file="res://chão.glb"
-dest_files=["res://.godot/imported/chão.glb-151bd0b6addcc4df69065ff4799fb44f.res"]
+source_file="res://assets/chão_canto.glb"
+dest_files=["res://.godot/imported/chão_canto.glb-997967799a54e5ec907ffe58ebe13a5f.res"]
 
 [params]
 

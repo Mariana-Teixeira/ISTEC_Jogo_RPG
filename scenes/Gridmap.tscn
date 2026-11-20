@@ -1,46 +1,46 @@
 [gd_scene format=3 uid="uid://b6l4cn1v8gn11"]
 
-[ext_resource type="ArrayMesh" uid="uid://bno2oygvnf8wu" path="res://chão.glb" id="1_5ntlx"]
-[ext_resource type="ArrayMesh" uid="uid://b3wsa420bqq12" path="res://chão_canto.glb" id="2_t41rs"]
-[ext_resource type="ArrayMesh" uid="uid://dwtga54otwteo" path="res://chão_metade.glb" id="3_4nuu8"]
+[ext_resource type="ArrayMesh" uid="uid://bno2oygvnf8wu" path="res://assets/chão.glb" id="1_5ntlx"]
+[ext_resource type="ArrayMesh" uid="uid://b3wsa420bqq12" path="res://assets/chão_canto.glb" id="2_t41rs"]
+[ext_resource type="ArrayMesh" uid="uid://dwtga54otwteo" path="res://assets/chão_metade.glb" id="3_4nuu8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tikgg"]
-size = Vector3(10.092776, 0.3636263, 4.1324606)
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1xvh"]
+size = Vector3(5.0472846, 0.18602428, 5.054396)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4y0oc"]
-size = Vector3(10.102428, 0.37233824, 10.116663)
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3gpd"]
+size = Vector3(5.042463, 0.18167171, 5.054395)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xjov0"]
-size = Vector3(10.092775, 0.36362627, 10.116659)
+[sub_resource type="BoxShape3D" id="BoxShape3D_lacsj"]
+size = Vector3(5.042463, 0.18167174, 2.0646229)
 
 [node name="Gridmap" type="Node3D" unique_id=394986810]
 
-[node name="ChãoMetade" type="MeshInstance3D" parent="." unique_id=111154742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8983881, 0, 6.1988726)
-mesh = ExtResource("3_4nuu8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="ChãoMetade" unique_id=2060394531]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.983422, 0.016050264, 1.034558)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChãoMetade/StaticBody3D" unique_id=911728423]
-shape = SubResource("BoxShape3D_tikgg")
-
-[node name="Chão" type="MeshInstance3D" parent="." unique_id=1268393655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8972236, 0, 11.707552)
+[node name="Chão" type="MeshInstance3D" parent="." unique_id=1595501222]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.820214, 0.052975655, 11.758636)
 mesh = ExtResource("1_5ntlx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=1760188176]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0006156, -0.11919072, 4.0083714)
+[node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=1533757250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9987535, 0.002287969, 2.0026264)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Chão/StaticBody3D" unique_id=403069032]
-shape = SubResource("BoxShape3D_4y0oc")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chão/StaticBody3D" unique_id=1944551237]
+shape = SubResource("BoxShape3D_w1xvh")
 
-[node name="ChãoCanto" type="MeshInstance3D" parent="." unique_id=978473728]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8531687, 0, -4.9331765)
+[node name="ChãoCanto" type="MeshInstance3D" parent="." unique_id=421479394]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.0338993, -0.0376848, -4.651403)
 mesh = ExtResource("2_t41rs")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ChãoCanto" unique_id=169547200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.981425, 0.003056109, 3.9865139)
+[node name="StaticBody3D" type="StaticBody3D" parent="ChãoCanto" unique_id=2039434143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9891644, 0.0015268624, 1.9917066)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChãoCanto/StaticBody3D" unique_id=1646509732]
-shape = SubResource("BoxShape3D_xjov0")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChãoCanto/StaticBody3D" unique_id=1492719208]
+shape = SubResource("BoxShape3D_a3gpd")
+
+[node name="ChãoMetade" type="MeshInstance3D" parent="." unique_id=737451737]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8986018, 0.040821075, 6.5576997)
+mesh = ExtResource("3_4nuu8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ChãoMetade" unique_id=1550745555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9901618, 0.008018896, 0.5168766)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChãoMetade/StaticBody3D" unique_id=578883864]
+shape = SubResource("BoxShape3D_lacsj")
