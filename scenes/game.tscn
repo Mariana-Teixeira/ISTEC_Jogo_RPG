@@ -23,6 +23,9 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="Resource" id="Resource_us6fa"]
 script = ExtResource("4_1l0tm")
 damage = 5.0
+Health = 5.0
+Speed = 5.0
+Attack = 5.0
 metadata/_custom_type_script = "uid://b6fac4bdylk8"
 
 [node name="Game" type="Node3D" unique_id=615727027]
