@@ -1,4 +1,5 @@
 extends Area3D
+class_name RunaBase
 
 @export var rune_data: RuneData
 

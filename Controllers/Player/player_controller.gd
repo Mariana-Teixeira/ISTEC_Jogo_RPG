@@ -93,6 +93,8 @@ func on_death() -> void:
 
 func add_rune_to_weapon(rune: RuneData) -> void:
 	weapon.calculate_rune(rune)
+	speed = rune.Speed
+	health_component.DarVida(rune.Health)
 
 func attack() -> void:
 	can_attack = false
