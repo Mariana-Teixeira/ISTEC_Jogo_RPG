@@ -96,9 +96,8 @@ func shoot_projectile() -> void:
 		return
 	can_shoot = false
 	var projectile = ProjectileScene.instantiate()
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = projectile_spawn.global_position
-	projectile.force = global_position.direction_to(player.global_position)
-	print(projectile.force)
+	add_child(projectile)
+	projectile.launch(projectile_spawn, player)
+
 	await get_tree().create_timer(ProjectileCooldown).timeout
 	can_shoot = true

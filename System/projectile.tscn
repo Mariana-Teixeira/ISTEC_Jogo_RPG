@@ -4,18 +4,31 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ciykk"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_ciykk"]
+[sub_resource type="SphereMesh" id="SphereMesh_pkcqo"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ciykk"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rjobu"]
+radius = 0.09988716
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v7dbp"]
+radius = 0.14307597
 
 [node name="Projectile" type="RigidBody3D" unique_id=353536525]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ciykk")
 script = ExtResource("1_jouvu")
-force = Vector3(1, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=251276391]
-mesh = SubResource("CylinderMesh_ciykk")
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_pkcqo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=260230888]
-shape = SubResource("CylinderShape3D_ciykk")
+shape = SubResource("SphereShape3D_rjobu")
+
+[node name="DamageArea3D" type="Area3D" parent="." unique_id=310167518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea3D" unique_id=208770679]
+shape = SubResource("SphereShape3D_v7dbp")
+
+[connection signal="area_entered" from="DamageArea3D" to="." method="_on_damage_area_3d_area_entered"]
+[connection signal="body_entered" from="DamageArea3D" to="." method="_on_damage_area_3d_body_entered"]
