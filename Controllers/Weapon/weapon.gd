@@ -10,8 +10,6 @@ func attack(attack_instance: Attack) -> void:
 	if not cast.is_colliding():
 		return
 
-	print("Attacking")
-
 	for i in cast.get_collision_count():
 		var collider = cast.get_collider(i)
 		var enemy = collider as Enemy
