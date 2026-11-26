@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://dvh56t3ts1kvu"]
 
 [ext_resource type="Script" uid="uid://bybkqbrhbdmg0" path="res://System/PortaChave/porta.gd" id="1_jy2eq"]
+[ext_resource type="ArrayMesh" uid="uid://iqkhhe0w81my" path="res://Models/door.glb" id="2_5d8g5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wyfhi"]
 radius = 1.1644762
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jy2eq"]
-size = Vector3(1, 2.2089844, 0.44555664)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wyfhi"]
-size = Vector3(1, 2.2087402, 0.40429688)
+size = Vector3(3.8710938, 6.7887573, 0.44555664)
 
 [node name="Porta" type="Node3D" unique_id=2044431322]
 script = ExtResource("1_jy2eq")
@@ -26,11 +24,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.472342)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.49814856)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pivo/StaticBody3D" unique_id=66289685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6044922, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7233715, 1.4828246, 0.088470936)
 shape = SubResource("BoxShape3D_jy2eq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivo" unique_id=2068659288]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.6043701, 0.49814856)
-mesh = SubResource("BoxMesh_wyfhi")
+mesh = ExtResource("2_5d8g5")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
