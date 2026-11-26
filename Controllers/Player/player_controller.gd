@@ -86,7 +86,10 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func on_death() -> void:
-	get_tree().quit()
+	var game_over_scene = preload("res://game_over.tscn")
+	var game_over = game_over_scene.instantiate()
+
+	get_tree().root.add_child(game_over)
 
 func add_rune_to_weapon(rune: RuneData) -> void:
 	weapon.calculate_rune(rune)

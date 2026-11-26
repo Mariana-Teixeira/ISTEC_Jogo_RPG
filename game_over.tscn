@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dfo8megjrgnxi"]
+
+[ext_resource type="Script" uid="uid://dmemb71xrieof" path="res://game_over.gd" id="1_y26ei"]
+
+[node name="GameOver" type="Control" unique_id=333285976]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=164547127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1221707631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=72519306]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=965443079]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1393925042]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "RESTART
+"
+
+[node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=812608783]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
