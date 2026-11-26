@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b4bjfp5ntrdr3" path="res://Controllers/Player/player.tscn" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://jifjfox6t234" path="res://Controllers/Enemy/enemy.tscn" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dayyqvkffi5y2" path="res://System/Runes/rune.tscn" id="3_i6g32"]
+[ext_resource type="PackedScene" uid="uid://c0mp8xp4uhl53" path="res://Controllers/Enemy/RangedEnemy.tscn" id="3_p57ef"]
 [ext_resource type="Script" uid="uid://b6fac4bdylk8" path="res://System/Runes/Data/rune_data.gd" id="4_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://108eayog54uo" path="res://System/projectile.tscn" id="5_iywne"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,6 +39,7 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=2077024448 instance=ExtResource("1_3dryh")]
 
 [node name="World" type="NavigationRegion3D" parent="." unique_id=455867810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6044133, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_eq2t1")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="World" unique_id=1036120792]
@@ -54,6 +57,14 @@ size = Vector3(1, 5.6955566, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0122066, 0, -14.661199)
 player = NodePath("../Player")
 
+[node name="RangedEnemy" parent="." unique_id=2132676368 node_paths=PackedStringArray("player") instance=ExtResource("3_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.663822, 0, -14.448193)
+ProjectileScene = ExtResource("5_iywne")
+player = NodePath("../Player")
+
 [node name="Rune" parent="." unique_id=1838869044 instance=ExtResource("3_i6g32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70929, -0.53709984, 7.3285418)
 rune_data = SubResource("Resource_us6fa")
+
+[node name="Projectile" parent="." unique_id=353536525 instance=ExtResource("5_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.146489, 0, -11.513514)

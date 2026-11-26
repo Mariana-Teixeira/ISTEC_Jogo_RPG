@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://108eayog54uo"]
+
+[ext_resource type="Script" uid="uid://cyxx1xvdpb53i" path="res://System/projectile.gd" id="1_jouvu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ciykk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ciykk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ciykk"]
+
+[node name="Projectile" type="RigidBody3D" unique_id=353536525]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_ciykk")
+script = ExtResource("1_jouvu")
+force = Vector3(1, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=251276391]
+mesh = SubResource("CylinderMesh_ciykk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=260230888]
+shape = SubResource("CylinderShape3D_ciykk")
