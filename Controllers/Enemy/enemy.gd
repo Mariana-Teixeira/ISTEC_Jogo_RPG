@@ -12,8 +12,13 @@ class_name Enemy
 @export var player: CharacterBody3D
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var health_bar: HealthBar = $SubViewport/HealthBar3D
 
 var can_attack: bool = true
+
+func _ready() -> void:
+	health_bar.max_value = HP
+	health_bar.value = HP
 
 
 func _physics_process(delta: float) -> void:
@@ -44,7 +49,10 @@ func attack() -> void:
 
 
 func take_damage(damage: float) -> void:
-	HP -= damage
+	HP = max(HP - damage, 0)
+
+	health_bar.value = HP
+
 	print(HP)
 
 	if HP <= 0:

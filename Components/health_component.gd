@@ -13,3 +13,6 @@ func damage(attack: Attack) -> void:
 	
 	if health <= 0:
 		parent.on_death()
+
+func DarVida (hp) ->void:
+	health += hp
