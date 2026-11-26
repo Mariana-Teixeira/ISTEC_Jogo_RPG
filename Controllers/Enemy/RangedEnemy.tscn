@@ -9,6 +9,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p57ef"]
 albedo_color = Color(0.20256978, 0, 0.36169744, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_v7dbp"]
+size = Vector3(0.6291504, 0.17785645, 0.3359375)
+
 [node name="RangedEnemy" type="CharacterBody3D" unique_id=2132676368]
 script = ExtResource("1_pkcqo")
 
@@ -20,3 +23,10 @@ shape = SubResource("CapsuleShape3D_pkcqo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=193683177]
 mesh = SubResource("CapsuleMesh_rjobu")
 surface_material_override/0 = SubResource("StandardMaterial3D_p57ef")
+
+[node name="ProjectileSpawn" type="Marker3D" parent="." unique_id=455639150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026, 0, 1)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1755118311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41107178, 0.33203125)
+mesh = SubResource("BoxMesh_v7dbp")

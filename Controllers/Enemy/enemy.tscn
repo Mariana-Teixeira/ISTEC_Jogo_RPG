@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://clovwqxb8stjx" path="res://Components/HealthComponent.tscn" id="2_yh4fu"]
 [ext_resource type="Script" uid="uid://blogtugc283p2" path="res://Controllers/Enemy/enemy_visual.gd" id="3_kio2y"]
 [ext_resource type="Script" uid="uid://kedln7kqpsu" path="res://Components/health_component.gd" id="3_whdqs"]
-[ext_resource type="Animation" uid="uid://b6i44fe0y1xdl" path="res://Assets/Animations/idle.res" id="4_kio2y"]
-[ext_resource type="Animation" uid="uid://exqscht36bou" path="res://Assets/Animations/run.res" id="5_dhtie"]
+[ext_resource type="Animation" uid="uid://bakitjynbk3se" path="res://Assets/Animations/idle.res" id="4_kio2y"]
+[ext_resource type="Animation" uid="uid://b67lyo143hk4f" path="res://Assets/Animations/run.res" id="5_dhtie"]
+[ext_resource type="PackedScene" uid="uid://cr5sfr0bfy6fk" path="res://health_bar_3d.tscn" id="8_t3nqx"]
+[ext_resource type="Script" uid="uid://blywc01y3gkmt" path="res://health_bar.gd" id="9_gi87o"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7fqi"]
 _data = {
@@ -16,6 +18,9 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q701h"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_eq2t1"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1813486969 groups=["Enemy"]]
 script = ExtResource("1_rmm47")
 
@@ -24,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("3_kio2y")
 enemy = NodePath("..")
 
-[node name="Skeleton3D" parent="Visual" index="0" unique_id=1121502069]
+[node name="Skeleton3D" parent="Visual" index="0" unique_id=853291260]
 bones/0/position = Vector3(0.0035294495, 0.54713666, -0.0021495486)
 bones/0/rotation = Quaternion(0.06765391, -0.057462644, -0.014661286, 0.99594486)
 bones/1/rotation = Quaternion(0.101583205, 0.1271535, 0.007217464, 0.9866412)
@@ -73,7 +78,7 @@ bones/53/rotation = Quaternion(-0.34151638, -0.06997849, 0.0038557446, 0.9372592
 bones/54/rotation = Quaternion(0.63575345, -0.061569322, -0.059559535, 0.7671242)
 bones/55/rotation = Quaternion(0.5866673, 0.0350512, 0.0012761294, 0.8090682)
 
-[node name="AnimationPlayer" parent="Visual" index="1" unique_id=1403081084]
+[node name="AnimationPlayer" parent="Visual" index="1" unique_id=2014249482]
 libraries/Enemy = SubResource("AnimationLibrary_r7fqi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=146833100]
@@ -83,5 +88,17 @@ shape = SubResource("CapsuleShape3D_q701h")
 
 [node name="HealthComponent" parent="." unique_id=227084010 instance=ExtResource("2_yh4fu")]
 script = ExtResource("3_whdqs")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1741287274]
+disable_3d = true
+transparent_bg = true
+
+[node name="HealthBar3D" parent="SubViewport" unique_id=1844352372 instance=ExtResource("8_t3nqx")]
+script = ExtResource("9_gi87o")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=666082557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38652492, 1.0075614, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_eq2t1")
 
 [editable path="Visual"]
