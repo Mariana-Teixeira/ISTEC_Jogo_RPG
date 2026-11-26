@@ -13,6 +13,7 @@ var can_attack: bool = true
 @onready var camera = $Head/Camera3D
 @onready var health_label: Label = $HealthLabel
 @onready var health_component: Node = $HealthComponent
+@onready var player_health_bar: HealthBar = $CanvasLayer/HealthBar3D
 
 # How fast the player moves in meters per second.
 @export var speed = 14
@@ -25,9 +26,19 @@ var target_velocity = Vector3.ZERO
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	player_health_bar.update_health(
+		health_component.health,
+		health_component.MaxHealth
+	)
 	
 func _process(delta: float) -> void:
 	health_label.text = str(health_component.health)
+
+	player_health_bar.update_health(
+		health_component.health,
+		health_component.MaxHealth
+	)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

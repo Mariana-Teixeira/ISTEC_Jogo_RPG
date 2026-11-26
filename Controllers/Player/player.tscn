@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://clovwqxb8stjx" path="res://Components/HealthComponent.tscn" id="2_4pj0q"]
 [ext_resource type="Script" uid="uid://kedln7kqpsu" path="res://Components/health_component.gd" id="3_4krcl"]
 [ext_resource type="PackedScene" uid="uid://bv0ncp7ogfwn4" path="res://Controllers/Weapon/Weapon.tscn" id="4_us6fa"]
+[ext_resource type="PackedScene" uid="uid://cr5sfr0bfy6fk" path="res://health_bar_3d.tscn" id="5_xvfkl"]
+[ext_resource type="Script" uid="uid://blywc01y3gkmt" path="res://health_bar.gd" id="6_gbsjg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_eq2t1"]
 
@@ -30,3 +32,12 @@ offset_bottom = 23.0
 script = ExtResource("3_4krcl")
 
 [node name="Weapon" parent="." unique_id=967843283 instance=ExtResource("4_us6fa")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1444228637]
+
+[node name="HealthBar3D" parent="CanvasLayer" unique_id=1844352372 instance=ExtResource("5_xvfkl")]
+offset_left = -549.0
+offset_top = 270.0
+offset_right = -319.0
+offset_bottom = 297.0
+script = ExtResource("6_gbsjg")
