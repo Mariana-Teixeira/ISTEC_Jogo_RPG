@@ -2,15 +2,14 @@ extends CharacterBody3D
 class_name Player
 
 var tem_chave = false
-
+@onready var animador:AnimationPlayer=$"Camera3D/braco-2/AnimationPlayer"
 @export var look_sensitivity: float = 0.002
 
 @export var attack_cooldown: float = 1.0
 
 var can_attack: bool = true
 
-@onready var head = $Head
-@onready var camera = $Head/Camera3D
+@onready var camera = $Camera3D
 @onready var health_label: Label = $HealthLabel
 @onready var health_component: Node = $HealthComponent
 @onready var player_health_bar: HealthBar = $CanvasLayer/HealthBar3D
@@ -56,6 +55,7 @@ func _unhandled_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if can_attack:
 				attack()
+				animador.play("ArmatureAction_001")
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO

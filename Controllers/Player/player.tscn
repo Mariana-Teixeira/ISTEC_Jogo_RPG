@@ -6,23 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://bv0ncp7ogfwn4" path="res://Controllers/Weapon/Weapon.tscn" id="4_us6fa"]
 [ext_resource type="PackedScene" uid="uid://cr5sfr0bfy6fk" path="res://health_bar_3d.tscn" id="5_xvfkl"]
 [ext_resource type="Script" uid="uid://blywc01y3gkmt" path="res://health_bar.gd" id="6_gbsjg"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_eq2t1"]
+[ext_resource type="PackedScene" uid="uid://bus5vmtnli3bs" path="res://Assets/Animations/braco-2.glb" id="7_gblqa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eq2t1"]
 
 [node name="Player" type="CharacterBody3D" unique_id=2077024448 groups=["Player"]]
 script = ExtResource("1_ey6tl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=264663472]
-mesh = SubResource("CapsuleMesh_eq2t1")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1973592209]
 shape = SubResource("CapsuleShape3D_eq2t1")
-
-[node name="Head" type="Node3D" parent="." unique_id=349967994]
-
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=41130782]
 
 [node name="HealthLabel" type="Label" parent="." unique_id=1183085406]
 offset_right = 40.0
@@ -41,3 +33,24 @@ offset_top = 270.0
 offset_right = -319.0
 offset_bottom = 297.0
 script = ExtResource("6_gbsjg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=41130782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1622194, 0)
+
+[node name="braco-2" parent="Camera3D" unique_id=1851254314 instance=ExtResource("7_gblqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5805236, -1.7613428, 4.072049)
+
+[node name="Skeleton3D" parent="Camera3D/braco-2/Armature" parent_id_path=PackedInt32Array(1851254314, 909604064) index="0" unique_id=164458234]
+bones/0/position = Vector3(0, -8.381903e-09, 0.1810471)
+bones/0/rotation = Quaternion(-0.08216426, 0, 0, 0.99661887)
+bones/2/rotation = Quaternion(0.24186733, 0.0029266125, -0.011236425, 0.97023994)
+bones/3/rotation = Quaternion(0.76523566, -0.45290896, -0.02285433, 0.4569087)
+bones/4/rotation = Quaternion(0.09058505, 0.034521356, 0.5066277, 0.8566978)
+bones/5/rotation = Quaternion(0.002770423, 0.011777935, 0.20167027, 0.97937876)
+bones/6/rotation = Quaternion(-0.023534909, 0.018442977, 0.6495474, 0.75973296)
+bones/8/rotation = Quaternion(-0.54699856, -0.12801859, 0.50621426, 0.6543325)
+
+[node name="Bone_007" parent="Camera3D/braco-2/Armature/Skeleton3D" index="0" unique_id=894912183]
+transform = Transform3D(0.99999994, 3.5834091e-09, 1.6734703e-09, 9.240466e-10, 0.978815, -0.20474666, -2.066372e-09, 0.20474663, 0.9788149, 0.019571306, 1.80339, 0.2320033)
+
+[editable path="Camera3D/braco-2"]
